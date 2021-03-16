@@ -1,13 +1,14 @@
-import express from 'express'
+import express from "express";
 
-const app = express()
-const port = 4000
+import routes from './routes/routes'
 
-app.get('/', (req, res) => {
-  return res.json({ message: 'ALO' })
-})
+const app = express();
+const port = 4000;
+
+app.use(express.json())
+app.use(routes)
 
 
-
-
-app.listen(port, () => console.log(`Servidor online -- [http://localhost:${port}] `))
+app.listen(port, () =>
+  console.log(`Servidor online -- [http://localhost:${port}] `)
+);
