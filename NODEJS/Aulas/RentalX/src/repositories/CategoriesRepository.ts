@@ -1,18 +1,18 @@
 import Category from "../model/Category";
 
-interface CategoryDTO {
+interface ICategoryDTO {
   name: string;
   description: string;
 }
 
-class CategoryRepository {
+class CategoriesRepository {
   private categories: Category[];
 
   constructor() {
     this.categories = [];
   }
 
-  create({ description, name }) {
+  create({ description, name }: ICategoryDTO): void {
     const category = new Category();
 
     Object.assign(category, {
@@ -23,6 +23,16 @@ class CategoryRepository {
 
     this.categories.push(category);
   }
+
+  list(): Category[] {
+    return this.categories;
+  }
+
+  findByName(name: string): Category {
+    const category = this.categories.find((category) => category.name === name);
+
+    return category;
+  }
 }
 
-export default new CategoryRepository();
+export { CategoriesRepository };
