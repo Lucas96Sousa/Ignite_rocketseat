@@ -2,14 +2,15 @@ import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
 import { Request, Response } from "express";
 
 class CreateCategoryController {
+
+	constructor(private createCategoryUseCase: CreateCategoryUseCase) { }
+
 	handle(req: Request, res: Response) {
 		const { name, description } = req.body;
 
-		const createCategoryService = new CreateCategoryService(
-			categoriesRepository
-		);
 
-		createCategoryService.execute({ name, description });
+
+		this.createCategoryUseCase.execute({ name, description });
 		return res.status(201).send();
 	}
 }
