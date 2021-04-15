@@ -4,6 +4,9 @@ import swaggerUi from "swagger-ui-express";
 import routes from "./routes/routes";
 import swaggerFile from "./swagger.json";
 
+import './database'
+
+
 const app = express();
 const port = 4000;
 
