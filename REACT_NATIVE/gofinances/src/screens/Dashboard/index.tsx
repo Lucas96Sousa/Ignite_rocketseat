@@ -28,10 +28,22 @@ export function Dashboard(){
       <Icon name="power"/>
      </UserWrapper>
    </Header>
-    <HighlightCards>    
-      <HighlightCard />
-      <HighlightCard />
-      <HighlightCard />
+    <HighlightCards>
+      <HighlightCard
+        title="Entradas"
+        amount="R$ 17.400,00"
+        lastTransaction="Última entrada dia 13 de abril"
+      />
+      <HighlightCard
+        title="Saídas"
+        amount="R$ 1.259,00"
+        lastTransaction="Última saída 03 de abril"
+      />
+      <HighlightCard
+        title="Total"
+        amount="R$ 16.141,00"
+        lastTransaction="01 à 16 de abril"
+      />
     </HighlightCards>
   </Container>
   )
