@@ -33,8 +33,8 @@ import {
       </Header>
 
       <Footer>
-        <Amount>{amount}</Amount>
-        <LastTransaction>{lastTransaction}</LastTransaction>
+        <Amount type={type}>{amount}</Amount>
+        <LastTransaction type={type}>{lastTransaction}</LastTransaction>
       </Footer>
     </Container>
     )
