@@ -29,7 +29,9 @@ export const Title = styled.Text<TypeProps>`
   font-family: ${({theme}) => theme.fonts.regular};
   font-size: ${RFValue(14)}px;
 
-  color: ${({theme}) => theme.colors.text_dark};
+  color: ${({theme, type}) =>
+    type === 'total' ? theme.colors.shape : theme.colors.text_dark
+  }
 `;
 
 export const Icon = styled(Feather)<TypeProps>`
