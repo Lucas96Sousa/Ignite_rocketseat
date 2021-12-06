@@ -1,5 +1,5 @@
 module.exports = {
   trailingComma: 'es5',
-  singleQuote: false,
+  singleQuote: true,
   arrowParens: "always"
 }
