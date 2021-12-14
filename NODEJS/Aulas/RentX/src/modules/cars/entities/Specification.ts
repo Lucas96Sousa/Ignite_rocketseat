@@ -8,7 +8,7 @@ class Specification {
 
 	@Column()
 	name: string;
-	
+
 	@Column()
 	description: string;
 

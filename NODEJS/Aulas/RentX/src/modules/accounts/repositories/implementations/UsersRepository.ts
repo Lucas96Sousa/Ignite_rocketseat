@@ -4,7 +4,7 @@ import { User } from "../../entities/User";
 import { IUsersRepository } from "../IUsersRepositories";
 
 
-class UserRepostory implements IUsersRepository {
+class UsersRepostory implements IUsersRepository {
   private respository: Repository<User>
 
   constructor () {
@@ -20,4 +20,4 @@ class UserRepostory implements IUsersRepository {
 	}
 }
 
-export {UserRepostory}
+export {UsersRepostory}
