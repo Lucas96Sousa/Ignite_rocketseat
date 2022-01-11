@@ -5,18 +5,23 @@ import { IUsersRepository } from "../IUsersRepositories";
 
 
 class UsersRepostory implements IUsersRepository {
-  private respository: Repository<User>
+  private repository: Repository<User>
 
   constructor () {
-	  this.respository = getRepository(User)
+	  this.repository = getRepository(User)
   }
 
-	async create({name, username, email, driver_license, password}: ICreateUserDTO): Promise<void> {
-		const user = this.respository.create({
-			name, username, email, driver_license, password
+	async create({name,  email, driver_license, password}: ICreateUserDTO): Promise<void> {
+		const user = this.repository.create({
+			name,  email, driver_license, password
 		})
 
-		await this.respository.save(user);
+		await this.repository.save(user);
+	}
+
+	async findByEmail(email: string): Promise<User> {
+			const user = await this.repository.findOne({email});
+			return user
 	}
 }
 
