@@ -7,4 +7,4 @@ const createSpecificationController = new CreateSpecificationController()
 
 specificationRoutes.post("/", createSpecificationController.handle);
 
-export default specificationRoutes;
+export  {specificationRoutes};
